@@ -4,5 +4,10 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("Welcome to the Musical Event Booking Application")
+	var eventName = "Jalsa"
+	const totalTickets = 50
+	var remainingTickets = 50
+	fmt.Println("Welcome to", eventName, "Booking Application")
+	fmt.Println("We have total of", totalTickets, "tickets and", remainingTickets, "tickets available for booking")
+
 }
