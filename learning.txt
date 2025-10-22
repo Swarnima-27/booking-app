@@ -4,3 +4,19 @@ go uses camelCase for naming convention
 
 As go compiles errors, it enforces to use all declared variables and constants in code.
 Go automatically adds spaces before and after variables name in print statements.
+
+DataTypes:
+    Go is statically typed language. it needs to tell go compiler about the datatype when we are declaring the variable.
+    Type Inference: Go can infer type when you assign a value. 
+
+    //No error
+    var a = "xyz"
+    const b = 2
+
+    //error
+    var a
+    a="xyz"
+
+    so to resolve this variable decalaration should be like this
+    var a string
+    a="xyz"
