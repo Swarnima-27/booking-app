@@ -20,3 +20,13 @@ DataTypes:
     so to resolve this variable decalaration should be like this
     var a string
     a="xyz"
+
+UserInput through Scanf
+    Imagine:
+        x = an empty box waiting for data
+
+        &x = the address of that box
+
+        fmt.Scan = a delivery person who needs your address to put something in
+
+        If you don’t give the address (&x), they have no idea where to deliver your input.
