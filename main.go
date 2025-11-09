@@ -11,12 +11,22 @@ func main() {
 	fmt.Printf("We have total of %v tickets and %v tickets available for booking\n", totalTickets, remainingTickets)
 
 	var userName string
+	var firstName string
+	var lastName string
 	var userTickets int
+	var booking [50]string
 
-	fmt.Println("Enter your name")
-	fmt.Scan(&userName)
+	fmt.Println("Enter your first name")
+	fmt.Scan(&firstName)
+	fmt.Println("Enter your last name")
+	fmt.Scan(&lastName)
+	userName = firstName + " " + lastName
 	fmt.Println("Enter number of tickets to be booked")
 	fmt.Scan(&userTickets)
+	remainingTickets = remainingTickets - userTickets
+	booking[0] = userName
+	fmt.Printf("The whole array %v\n", booking)
+	fmt.Printf("First value %v\n", booking[0])
 	fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
 
 }
