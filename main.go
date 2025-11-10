@@ -14,7 +14,7 @@ func main() {
 	var firstName string
 	var lastName string
 	var userTickets int
-	var booking [50]string
+	var booking []string
 
 	fmt.Println("Enter your first name")
 	fmt.Scan(&firstName)
@@ -24,8 +24,8 @@ func main() {
 	fmt.Println("Enter number of tickets to be booked")
 	fmt.Scan(&userTickets)
 	remainingTickets = remainingTickets - userTickets
-	booking[0] = userName
-	fmt.Printf("The whole array %v\n", booking)
+	booking = append(booking, userName)
+	fmt.Printf("The whole slice %v\n", booking)
 	fmt.Printf("First value %v\n", booking[0])
 	fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
 
