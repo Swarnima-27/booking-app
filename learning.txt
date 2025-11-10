@@ -30,3 +30,17 @@ UserInput through Scanf
         fmt.Scan = a delivery person who needs your address to put something in
 
         If you don’t give the address (&x), they have no idea where to deliver your input.
+
+Arrays:
+    size to be fixed. need to declare with size
+    syntax declaration: 
+        var array_name [size]array_type
+    adding elements using indexes
+    eg : arr[0]= "abcd"
+
+Slice :
+    to handle array limitations. does not require size decalartion.
+    Syntax: var slice_name []type
+    adding elements using append function. it will add element at the last of the slice.
+    eg : 
+        booking = append(booking, "abcd")
