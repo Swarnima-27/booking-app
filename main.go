@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -16,17 +19,23 @@ func main() {
 	var userTickets int
 	var booking []string
 
-	fmt.Println("Enter your first name")
-	fmt.Scan(&firstName)
-	fmt.Println("Enter your last name")
-	fmt.Scan(&lastName)
-	userName = firstName + " " + lastName
-	fmt.Println("Enter number of tickets to be booked")
-	fmt.Scan(&userTickets)
-	remainingTickets = remainingTickets - userTickets
-	booking = append(booking, userName)
-	fmt.Printf("The whole slice %v\n", booking)
-	fmt.Printf("First value %v\n", booking[0])
-	fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
+	for {
+		fmt.Println("Enter your first name")
+		fmt.Scan(&firstName)
+		fmt.Println("Enter your last name")
+		fmt.Scan(&lastName)
+		userName = firstName + " " + lastName
+		fmt.Println("Enter number of tickets to be booked")
+		fmt.Scan(&userTickets)
+		remainingTickets = remainingTickets - userTickets
+		booking = append(booking, userName)
+		firstNames := []string{}
+		for _, name := range booking {
+			fN := strings.Fields(name)
+			firstNames = append(firstNames, fN[0])
+		}
+		fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
+		fmt.Printf("First Names of all booked users %v", firstNames)
+	}
 
 }
