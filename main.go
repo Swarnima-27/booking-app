@@ -27,15 +27,23 @@ func main() {
 		userName = firstName + " " + lastName
 		fmt.Println("Enter number of tickets to be booked")
 		fmt.Scan(&userTickets)
-		remainingTickets = remainingTickets - userTickets
-		booking = append(booking, userName)
-		firstNames := []string{}
-		for _, name := range booking {
-			fN := strings.Fields(name)
-			firstNames = append(firstNames, fN[0])
+
+		if userTickets <= remainingTickets {
+			remainingTickets = remainingTickets - userTickets
+
+			booking = append(booking, userName)
+			firstNames := []string{}
+			for _, name := range booking {
+				fN := strings.Fields(name)
+				firstNames = append(firstNames, fN[0])
+			}
+			fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
+			fmt.Printf("First Names of all booked users %v \n", firstNames)
+			fmt.Printf("Tickets Remaining %v \n", remainingTickets)
+		} else {
+			fmt.Printf("Remaining tickets are %v, user cannot book %v tickets \n", remainingTickets, userTickets)
+			break
 		}
-		fmt.Printf("User %v booked %v tickets\n", userName, userTickets)
-		fmt.Printf("First Names of all booked users %v", firstNames)
 	}
 
 }
