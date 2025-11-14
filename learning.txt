@@ -41,6 +41,34 @@ Arrays:
 Slice :
     to handle array limitations. does not require size decalartion.
     Syntax: var slice_name []type
+            or booking := []string{}   slice of name booking of string type with empty/no values
     adding elements using append function. it will add element at the last of the slice.
     eg : 
         booking = append(booking, "abcd")
+
+Loops: very simplified,
+        only for loop exists in Go
+
+        1st case: Infinite Loops    
+            for{
+
+            }
+
+        2nd case: for each loop
+            for index,value := range bookings{
+                range function iterates over elementsfor different data structures.
+                for arrays and slices, range provide index and value for each element.
+            }
+            
+    strings.Fields(booking) : splits the string provided with white spaces as separator
+                              and returns slice with split elements.
+        "Nicole Smith" --> strings.Fields("Nicole Smith")-->["Nicole","Smith"]
+
+Blank Identifier: underscores are used to identify unused variables.
+                    to ignore a variable you don't want to use.
+
+If Else statement: if condition{
+
+                    }else{
+                        else should come just after the closing bracket of if statement.
+                    }
