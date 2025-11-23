@@ -90,3 +90,8 @@ Functions : Encapsalting code in a single container/block that belog together lo
         }
         if there are muliple return values the encapsulate their return types in ()
         eg in validateUserInput function.
+
+Package Level Variables: defined on top, outside all functions. Only for those variables which are required in most of the functions.
+            they cannot be declared in this format, a:=50
+            they should be declared as var a =50
+            
