@@ -72,3 +72,5 @@ If Else statement: if condition{
                     }else{
                         else should come just after the closing bracket of if statement.
                     }
+User Input Validation : can check whether user inputs are valid or not, using inbuild functions like len(), strings.Contains(dummy,"character"),
+                        and conditional statements.
