@@ -74,3 +74,19 @@ If Else statement: if condition{
                     }
 User Input Validation : can check whether user inputs are valid or not, using inbuild functions like len(), strings.Contains(dummy,"character"),
                         and conditional statements.
+
+Functions : Encapsalting code in a single container/block that belog together logically.
+            declared using func keyword
+    function parameters: values send to the functions  .
+            format: func functioName(parameterName parametertype){
+
+            }
+    eg in greet function
+
+    function with return values: only define return type.
+                                 go can return multiple values.
+        eg: func functioName(parameterName parametertype) ( return type1, return type2){
+
+        }
+        if there are muliple return values the encapsulate their return types in ()
+        eg in validateUserInput function.

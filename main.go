@@ -9,15 +9,15 @@ func main() {
 
 	var eventName = "Jalsa"
 	const totalTickets = 50
-	var remainingTickets = 50
-	fmt.Println("Welcome to", eventName, "Booking Application")
-	fmt.Printf("We have total of %v tickets and %v tickets available for booking\n", totalTickets, remainingTickets)
+	var remainingTickets uint = 50
+
+	greetGuests(eventName, totalTickets, remainingTickets)
 
 	var userName string
 	var firstName string
 	var lastName string
 	var email string
-	var userTickets int
+	var userTickets uint
 	var booking []string
 
 	for {
@@ -30,9 +30,8 @@ func main() {
 		fmt.Scan(&email)
 		fmt.Println("Enter number of tickets to be booked")
 		fmt.Scan(&userTickets)
-		isValidName := len(firstName) >= 2 && len(lastName) >= 2
-		isValidEmail := strings.Contains(email, "@")
-		isValidTicket := userTickets > 0 && userTickets <= remainingTickets
+
+		isValidName, isValidEmail, isValidTicket := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isValidName && isValidEmail && isValidTicket {
 			remainingTickets = remainingTickets - userTickets
@@ -60,4 +59,15 @@ func main() {
 		}
 	}
 
+}
+func greetGuests(eventName string, totalTickets int, remainingTickets uint) {
+	fmt.Println("Welcome to", eventName, "Booking Application")
+	fmt.Printf("We have total of %v tickets and %v tickets available for booking\n", totalTickets, remainingTickets)
+}
+
+func validateUserInput(firstName string, lastName string, email string, userTickets uint, remainingTickets uint) (bool, bool, bool) {
+	isValidName := len(firstName) >= 2 && len(lastName) >= 2
+	isValidEmail := strings.Contains(email, "@")
+	isValidTicket := userTickets > 0 && userTickets <= remainingTickets
+	return isValidName, isValidEmail, isValidTicket
 }
